@@ -1,5 +1,6 @@
 import "./App.css";
 import Counter from "./components/Counter";
+import Stats from "./components/Stats";
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
         Simple Counter Application
       </h1>
       <Counter />
+      <Counter />
+      <Stats count={2}/>
+      {/* <LoginForm /> */}
     </div>
   );
 }
