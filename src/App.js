@@ -1,5 +1,6 @@
 import { Provider } from "react-redux";
 import Counter from "./components/Counter";
+import HooksCounter from "./components/HooksCounter";
 import store from "./redux/counter/store";
 
 export default function App() {
@@ -11,8 +12,7 @@ export default function App() {
         </h1>
         <div className="max-w-md mx-auto mt-10 space-y-5">
           <Counter />
-          <Counter />
-          <Counter />
+          <HooksCounter id={9} />
         </div>
       </div>
     </Provider>
