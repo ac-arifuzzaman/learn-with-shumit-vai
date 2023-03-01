@@ -1,6 +1,7 @@
 import React from "react";
 import ticImg from "../assets/images/double-tick.png";
 import noteImg from "../assets/images/notes.png";
+import plusImg from "../assets/images/plus.png";
 
 const Header = () => {
   return (
@@ -14,17 +15,16 @@ const Header = () => {
         />
         <button
           type="submit"
-          className="appearance-none w-8 h-8 bg-[url('./images/plus.png')] bg-no-repeat bg-contain"
-        ></button>
+          className="appearance-none w-8 h-8 bg-no-repeat bg-contain"
+        >
+          <img src={plusImg} alt="" /> 
+          {/* error eikhane hoise upore ekta classname change kore children hishebe img tag use koresi tao kaj hoilo na. */}
+        </button>
       </form>
 
       <ul className="flex justify-between my-4 text-xs text-gray-500">
         <li className="flex space-x-1 cursor-pointer">
-          <img
-            className="w-4 h-4"
-            src={ticImg}
-            alt="Complete"
-          />
+          <img className="w-4 h-4" src={ticImg} alt="Complete" />
           <span>Complete All Tasks</span>
         </li>
         <li className="cursor-pointer">Clear completed</li>
