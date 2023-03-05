@@ -1,12 +1,12 @@
+import initialState from "../filters/initialState";
 import {
-    ADDED,
-    ALLCOMPLETED,
-    CLEARCOMPLETED,
-    COLORSELECTED,
-    DELETED,
-    TOOGLED
+  ADDED,
+  ALLCOMPLETED,
+  CLEARCOMPLETED,
+  COLORSELECTED,
+  DELETED,
+  TOOGLED
 } from "./actionTypes";
-import { initialState } from "./initialState";
 
 const nextId = (todos) => {
   const maxId = todos.reduce((maxId, todo) => Math.max(maxId, todo.id), -1);
