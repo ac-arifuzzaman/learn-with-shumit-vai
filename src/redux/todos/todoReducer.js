@@ -1,4 +1,3 @@
-import initialState from "../filters/initialState";
 import {
   ADDED,
   ALLCOMPLETED,
@@ -7,6 +6,7 @@ import {
   DELETED,
   TOOGLED
 } from "./actionTypes";
+import initialState from "./initialState";
 
 const nextId = (todos) => {
   const maxId = todos.reduce((maxId, todo) => Math.max(maxId, todo.id), -1);
@@ -60,7 +60,7 @@ const todoReducer = (state = initialState, action) => {
       return state.map((todo) => !todo.completed);
 
     default:
-      break;
+      return state;
   }
 };
 
