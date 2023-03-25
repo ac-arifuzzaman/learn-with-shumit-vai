@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRelatedVidoes } from "../../features/relatedVideos/relatedVideosSlice";
+import { fetchRelatedVideos } from "../../features/relatedVideos/relatedVideosSlice";
 import Loading from "../ui/Loading";
 import RelatedVideoListItem from "./RelatedVideoListItem";
 
@@ -11,7 +11,7 @@ export default function RelatedVideoList({ currentVideoId, tags }) {
   );
 
   useEffect(() => {
-    dispatch(fetchRelatedVidoes({ tags, id: currentVideoId }));
+    dispatch(fetchRelatedVideos({ tags, id: currentVideoId }));
   }, [dispatch, tags, currentVideoId]);
 
   // decide what to render

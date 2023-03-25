@@ -10,11 +10,21 @@ const initialState = {
 };
 
 // async thunk
-export const fetchRelatedVidoes = createAsyncThunk(
+/* export const fetchRelatedVidoes = createAsyncThunk(
   "relatedVideos/fetchRelatedVideos",
   async ({ tags, id }) => {
     const videos = await getRelatedVideos({ tags, id });
     return videos;
+  }
+);
+ */
+
+// async thunk
+export const fetchRelatedVideos = createAsyncThunk(
+  "relatedVideos/fetchRelatedVideos",
+  async ({ tags, id }) => {
+      const relatedVideos = await getRelatedVideos({ tags, id });
+      return relatedVideos;
   }
 );
 
@@ -23,15 +33,15 @@ const relatedVideoSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRelatedVidoes.pending, (state) => {
+      .addCase(fetchRelatedVideos.pending, (state) => {
         state.isError = false;
         state.isLoading = true;
       })
-      .addCase(fetchRelatedVidoes.fulfilled, (state, action) => {
+      .addCase(fetchRelatedVideos.fulfilled, (state, action) => {
         state.isLoading = false;
         state.relatedVideos = action.payload;
       })
-      .addCase(fetchRelatedVidoes.rejected, (state, action) => {
+      .addCase(fetchRelatedVideos.rejected, (state, action) => {
         state.isLoading = false;
         state.relatedVideos = [];
         state.isError = true;
