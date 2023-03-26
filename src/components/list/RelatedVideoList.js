@@ -28,13 +28,13 @@ export default function RelatedVideoList({ currentVideoId, tags }) {
   }
 
   if (!isLoading && !isError && relatedVideos?.length > 0) {
-    relatedVideos.map((video) => (
+    content = relatedVideos.map((video) => (
       <RelatedVideoListItem key={video.id} video={video} />
     ));
   }
-  
+
   return (
-    <div class="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
+    <div className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
       {content}
     </div>
   );
